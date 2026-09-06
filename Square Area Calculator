@@ -1,0 +1,15 @@
+class Main {
+    public static void main(String[] args) {
+        area a = new area();
+
+        int length = 5;
+
+        System.out.println("Area: " + a.calc(length));
+    }
+}
+
+class area{
+    public int calc(int length){
+        return length * length;
+    }
+}

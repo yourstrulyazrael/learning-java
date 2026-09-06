@@ -1,0 +1,22 @@
+class Main {
+    public static void main(String[] args) {
+        OddEven a = new OddEven();
+        int[] nums = {10, 5, 8, 3};
+
+        a.calc(nums);
+     }
+}
+
+class OddEven{
+    public void calc(int[] arr){
+        int finalscore = 0;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] % 2 == 0){
+                finalscore += arr[i];
+            }else{
+                finalscore -= arr[i];
+            }
+        }
+        System.out.println("Final Score: " + finalscore);
+    }
+}

@@ -1,0 +1,11 @@
+    class Main {
+        public static void main(String[] args) {
+            String[] books = {"Harry Potter", "Dune", "Hobbit", "1984"};
+    
+            String firstBook = books[0];
+            String lastBook = books[books.length - 1];
+    
+            System.out.println("First Book: " + firstBook);
+            System.out.println("Last Book: " + lastBook);
+        }
+    }

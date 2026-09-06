@@ -1,0 +1,25 @@
+class Main {
+    public static void main(String[] args) {
+        SalesTracker s = new SalesTracker();
+        int[] sales = {150, 210, 195, 300, 200};
+
+        s.tracker(sales);
+    }
+}
+
+class SalesTracker{
+    public void tracker(int[] arr){
+        int met = 0;
+        int missed = 0;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] >= 200){
+                met++;
+            }else{
+                missed++;
+            }
+        }
+        System.out.println("Days target met: " + met);
+        System.out.println("Days target missed: " + missed);
+    }
+    
+}

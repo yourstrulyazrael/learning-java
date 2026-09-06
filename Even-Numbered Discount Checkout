@@ -1,0 +1,22 @@
+class Main {
+    public static void main(String[] args) {
+        Discount d = new Discount();
+        int[] prices = {15, 20, 25, 30};
+
+        d.discount(prices);
+    }
+}
+
+class Discount{
+    public void discount(int[] arr){
+        double sum = 0;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] % 2 == 0){
+                sum += arr[i] * 0.50;
+            }else{
+                sum += arr[i];
+            }
+        }
+        System.out.println("Total Final Price: $" + sum);
+    }
+}

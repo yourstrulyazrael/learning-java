@@ -1,36 +1,32 @@
 import java.util.Scanner;
-
 class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Robot r = new Robot();
         
-        
+
         while(true){
-        System.out.print("Task Cost: ");
-        int task = input.nextInt();
-        input.nextLine();
+            System.out.print("Task Cost: ");
+            int task = input.nextInt();
+            r.monitor(task);
             
-        r.battery_monitor(task);
         }
-        
         
     }
 }
 
 class Robot{
-    int battery_level = 100;
+    int battery = 100;
     int completed = 0;
-    public void battery_monitor(int task){
-        if(battery_level <= 20 || completed >= 5){
-            System.out.println("Cannot accept tasks at this time.");
-        }else if(task > battery_level){
+    public void monitor(int task){
+        if(battery - task < 20 || completed >= 5){
             System.out.println("Cannot accept tasks at this time.");
         }else{
             completed++;
-            battery_level -= task;
+            battery -= task;
         }
-        System.out.println("Completed tasks: " + completed);
-        System.out.println("Battery Level: " + battery_level);
+
+        System.out.println("Tasks completed: " + completed);
+        System.out.println("Remaining battery: " + battery + "%");
     }
 }

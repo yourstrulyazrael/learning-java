@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        TicketSystem t = new TicketSystem();
+
+        System.out.print("Enter your age: ");
+        int age = input.nextInt();
+        input.nextLine();
+        System.out.println("Are you a local? (y/n): ");
+        String local = input.nextLine();
+
+        t.discount(age, local);
+    }
+}
+
+class TicketSystem {
+    public void discount(int age, String local){
+        double discount;
+        int price = 50;
+        if(age <= 12 || age >= 65){
+            discount = price * 0.50;
+            System.out.println("Ticket Price: $" + discount);
+        }else if(!(age <= 12) && local.equals("y") || !(age >= 65) && local.equals("y")){
+            discount = price * 0.80;
+            System.out.println("Ticket Price: $" + discount);
+        }else if(!(age <= 12) && local.equals("n") || !(age >= 65) && local.equals("n")){
+            System.out.println("Ticket Price: $" + price);
+        }else{
+            System.out.println("Invalid choice! Please try again!");
+        }
+    }
+}

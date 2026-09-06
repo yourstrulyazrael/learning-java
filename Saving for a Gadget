@@ -1,0 +1,20 @@
+class Main {
+    public static void main(String[] args) {
+        Savings s = new Savings();
+        int target = 500;
+        int savings = 0;
+
+        s.savings(savings, target);
+    }
+}
+
+class Savings{
+    public void savings(int savings, int target){
+        int weeks = 0;
+        while(savings < target){
+            savings += 85;
+            weeks++;
+        }
+        System.out.println("Weeks needed: " + weeks);
+    }
+}

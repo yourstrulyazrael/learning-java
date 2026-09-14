@@ -1,0 +1,21 @@
+class Main {
+    public static void main(String[] args) {
+        NumIndentifier n = new NumIndentifier();
+
+        System.out.println(n.identifier(2));
+        System.out.println(n.identifier(-3));
+        System.out.println(n.identifier(0));
+    }
+}
+
+class NumIndentifier{
+    public String identifier(int n){
+        if(n > 0){
+            return "Positive number";
+        }else if(n < 0){
+            return "Negative number";
+        }else{
+            return "Zero";
+        }
+    }
+}

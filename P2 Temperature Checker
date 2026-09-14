@@ -1,0 +1,29 @@
+class Main {
+    public static void main(String[] args) {
+        TempChecker t = new TempChecker();
+        int [] temps = {32, 28, 35, 25, 30};
+
+        int[] result = t.checker(temps);
+
+        System.out.println("Hot: " + result[0]);
+        System.out.println("Normal: " + result[1]);
+    }
+}
+
+class TempChecker{
+    public int[] checker(int[] arr){
+        int hot =  0;
+        int normal = 0;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] >= 30){
+                hot++;
+            }else{
+                normal++;
+            }
+        }
+
+        int [] result = {hot, normal};
+    
+        return result;
+    }
+}

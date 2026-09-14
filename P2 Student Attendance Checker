@@ -1,0 +1,30 @@
+class Main {
+    public static void main(String[] args) {
+        AttendanceChecker a = new AttendanceChecker();
+        int [] students = {1, 1, 0, 1, 0};
+
+        int[] result = a.checker(students);
+
+        System.out.println("Present: " + result[0]);
+        System.out.println("Absent: " + result[1]);
+        
+    }
+}
+
+class AttendanceChecker{
+    public int [] checker(int[] arr){
+        int present = 0;
+        int absent = 0;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] == 1){
+                present++;
+            }else{
+                absent++;
+            }
+        }
+
+        int [] result = {present, absent};
+
+        return result;
+    }
+}
